@@ -1,0 +1,295 @@
+\documentclass{beamer}
+%\documentclass[mathserif,11pt]{beamer}
+
+%\usetheme{AnnArbor}
+%\usetheme{Antibes}
+%\usetheme{Bergen}
+%\usetheme{Berkeley}
+%\usetheme{Berlin}
+%\usetheme{Boadilla}
+%\usetheme{boxes}
+%\usetheme{CambridgeUS}
+%\usetheme{Copenhagen}
+%\usetheme{Darmstadt}
+%\usetheme{default}
+%\usetheme{Frankfurt}
+%\usetheme{Goettingen}
+%\usetheme{Hannover}
+%\usetheme{Ilmenau}
+%\usetheme{JuanLesPins}
+%\usetheme{Luebeck}
+\usetheme{Madrid}
+%\usetheme{Malmoe}
+%\usetheme{Marburg}
+%\usetheme{Montpellier}
+%\usetheme{PaloAlto}
+%\usetheme{Pittsburgh}
+%\usetheme{Rochester}
+%\usetheme{Singapore}
+%\usetheme{Szeged}
+%\usetheme{Warsaw}
+
+\mode<presentation>
+{
+%\setbeamercolor*{palette primary}{use=structure,fg=white,bg=blue}
+\setbeamercolor*{palette secondary}{use=structure,fg=white,bg=red}
+\setbeamercolor*{palette tertiary}{use=structure,fg=white,bg=black}
+\setbeamercolor{frametitle}{bg=blue}
+}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{fontawesome}
+\usepackage{xcolor}
+\usepackage{texpower}
+\usepackage{graphicx}
+\usepackage{framed,color}
+\usepackage{tikz}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usecolortheme{dolphin}
+%COLOR THEME----albatross beaver beetle crane dolphin dove fly lily orchid seahorse whale wolverine
+%\usecolortheme[RGB={100,90,150}]{structure}		% where 0 ≤ † ≤ 255.
+
+%\usefonttheme{structureitalicserif}
+%FONT THEME------professionalfonts 	structureitalicserif 	structurebold 	structuresmallcapsserif	
+%\setbeamertemplate{background canvas}{\includegraphics[width=
+%\paperwidth,height=\paperheight]{../../home/rchand/cosmos.jpg}}
+
+\setbeamertemplate{items}[ball] % traingle, circle. For the items in the frame
+\setbeamertemplate{navigation symbols}{} %navigation symbols that appear in bottom can be removed by using the command
+
+\definecolor{shadecolor}{rgb}{0.5,0.5,0.5}  % shadecolcor for shaded  text block
+
+% customBlock : Custom framed text box new environment
+\newenvironment<>{customBlock}[1]{%
+  \begin{actionenv}#2%
+      \def\insertblocktitle{#1}%
+      \par%
+      \mode<presentation>{%
+        \setbeamercolor{block title}{fg=white,bg=blue}
+       \setbeamercolor{block body}{fg=black,bg=olive!50}
+       \setbeamercolor{itemize item}{fg=orange!20!black}
+       \setbeamertemplate{itemize item}[triangle]
+     }%
+      \usebeamertemplate{block begin}}
+    {\par\usebeamertemplate{block end}\end{actionenv}}
+
+% For mdframed the packages is used. 
+\usepackage{tikz}
+\usepackage[framemethod=tikz]{mdframed}
+
+% Transparent text box with tikz is defiend here
+\newmdenv[tikzsetting={draw=black,fill=white,fill opacity=0.7, line width=4pt},backgroundcolor=none,leftmargin=0,rightmargin=0,innertopmargin=4pt,skipbelow=\baselineskip,%
+skipabove=\baselineskip]{TitleBox}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\title{Title}
+\subtitle{Subtitle}
+\author{Rohan Chandrakar}
+\date{\today}
+\institute[] { Center for Basic Sciences, \\Pt. Ravishsnakar Shukla University Raipur}
+\subject{Subject} %This is only inserted into the PDF information catalog. Can be left out. 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+% Black Frame at the first slide
+\bgroup
+\setbeamercolor{background canvas}{bg=black}
+\begin{frame}[plain]{}
+\end{frame}
+\egroup
+
+{
+ \usebackgroundtemplate{\includegraphics[width=1.0\paperwidth]{/home/rchand/cosmos.jpg}}
+  \begin{frame}[plain] 
+
+  \begin{TitleBox}
+  \maketitle  
+    \end{TitleBox}
+	\begin{flushright}
+	\vspace{5.5em}
+	\textcolor{white}{\tiny Image credit : Andrew Pontzen/Fabio Governato}
+  \end{flushright}
+  \end{frame}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Table of Contents}
+\tableofcontents
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\section{First Section}
+
+\subsection{First Subsection}
+\begin{frame}{First Subsection}
+\begin{itemize}\itemsep7pt
+\item {First Item at once}
+\item {Second Item at once}\\
+\item {Third Item at once}\\
+
+Statement without Item
+\end{itemize}
+\end{frame}
+
+\subsection{Second Subsection}
+\begin{frame}{Second Subsection}
+\begin{itemize}
+\item {First \\ Part \\ of \\ the\\ frame}\pause   %reveals the parts of a slide one at a time
+\item {Second \\ Part \\ of \\ the \\ frame}
+\end{itemize}
+\end{frame}
+
+\subsection{Third Subsection}
+\begin{frame}{Item With Enumeration}
+\begin{enumerate}
+\item {First Item }
+\item {Second Item}\\
+\item {Third Item}\\
+Statement without Item
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{Customize Item}
+\begin{description}\itemsep18pt
+\item[FIRST] Study of life.
+\item[SECOND] Science of matter and its motion.
+\item[THIRD] Scientific study of mental processes and behaviour.
+
+\end{description}
+\end{frame}
+
+
+
+\section{Second Section}
+
+\begin{frame}{Second Section}
+\begin{itemize}[<+->] %Item will appear one by one in sequence
+\item {First Item one by one}
+\item {Second Item one by one}
+\item {Third Item one by one} \\ \uncover<4-> {This will come latter  }
+\end{itemize}
+\end{frame}
+
+\section{Colored Text}
+\begin{frame}{Colored Text}
+		%DEFINED COLOR----------red green blue yellow orange purple violet magenta cyan brown black white darkgray lightgray gray
+ 	\begin{itemize}
+ 	
+		\item        \textcolor{red}{This is red colored text}\\
+        \item		\colorbox{black}{\textcolor{green}{This is Green text with black background }}\\
+        \item		\fcolorbox{black}{blue}{This is black colored frame with blue background}\\
+        %\definecolor{colour name}{rgb}{?, ?, ?}   where 0 ≤ ? ≤ 1
+		%\definecolor{colour name}{RGB}{†, †, †}   where 0 ≤ † ≤ 255.
+		       \definecolor{MyPurple}{RGB}{200, 0, 230}
+				\definecolor{MyLightBlue}{rgb}{0.3, 0.6, .7}
+		\item		\textcolor{MyPurple}{This is my defined purple color} \\
+		\item		\textcolor{MyLightBlue}{This is my defined light blue}
+	
+ 	\end{itemize}
+\end{frame}
+%\definecolor{colour name}{rgb}{?, ?, ?}   where 0 ≤ ? ≤ 1
+%\definecolor{colour name}{RGB}{†, †, †}   where 0 ≤ † ≤ 255.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Image Section}
+\subsection{Only Image}
+\begin{frame}{Images in LATEX}
+\begin{figure}%[hbtp]
+%\centering
+%\includegraphics[scale=1]{../CMB.jpg}
+%\includegraphics[height=\textheight]{../CMB.jpg}
+\includegraphics[height=0.65\textheight]{../CMB.jpg}
+\caption{Image name}
+\end{figure}
+\end{frame}
+
+
+\subsection{Image with column}
+\begin{frame}{Image with column} 
+
+\begin{columns}
+
+\column{.5\textwidth}
+
+This is the first column\\
+
+\includegraphics[height=0.55\textheight]{../CMB.jpg}
+
+
+\column{.5\textwidth}
+
+This is the Second column \\
+\begin{figure}
+\includegraphics[height=0.65\textheight]{../CMB.jpg}
+\caption{Image name}
+\end{figure}
+
+\end{columns}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
+
+\section{Framed Text and Custom Block}
+%New environment has been made for different type of text box with addition to background image
+
+%   1. Shaded Text Box  : shade color is defined in preamble
+{
+  \usebackgroundtemplate{\includegraphics[width=1.0\paperwidth]{/home/rchand/cosmos.jpg}}
+
+	\begin{frame}{Framed Text and Custom Block}
+		\begin{shaded}
+			Different types of framed text. \\
+			  This one is a block made with frame package
+		\end{shaded}
+
+%	2. Custom block with the new environment defined in preamble.
+		\begin{customBlock}{Title of customized  block}
+		    Content of textbox \\
+		    More content
+	    \end{customBlock}
+	     
+%	3. mdframed text box locally defiined here
+		 \begin{mdframed}[outerlinewidth=3,leftmargin=0,%
+		 rightmargin=20,backgroundcolor=white,%
+outerlinecolor=black,innertopmargin=2pt,%
+splittopskip=\topskip,skipbelow=\baselineskip,%
+skipabove=\baselineskip]
+  This is another custom frame made with mdframed, the options set locally here
+  \end{mdframed}	
+			
+%	4. 	This textbox is added with the transperancy with tikz
+		\begin{TitleBox}
+		  A custom frame made with new md environment (via mdframed), and transparnecy via tikz
+		  \end{TitleBox}
+
+	\end{frame}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}

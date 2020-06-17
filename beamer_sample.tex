@@ -1,0 +1,79 @@
+\documentclass[11pt]{beamer}
+\usetheme{Warsaw}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\author{Rohan Chandrakar}
+\title{Beamer Sample}
+%\setbeamercovered{transparent} 
+%\setbeamertemplate{navigation symbols}{} 
+%\logo{} 
+%\institute{} 
+%\date{} 
+%\subject{} 
+ %
+%\newcommand{\includemovie}[3]{%
+%\includemedia[%
+%width=#1,height=#2,%
+%activate=pagevisible,%
+%deactivate=pageclose,%
+%addresource=#3,%
+%flashvars={%
+%src=#3 % same path as in addresource!
+%&autoPlay=true % default: false; if =true, automatically starts playback after activation (see option ‘activation)’
+%&loop=true % if loop=true, media is played in a loop
+%&controlBarAutoHideTimeout=0 %  time span before auto-hide
+%}%
+%]{}{StrobeMediaPlayback.swf}%
+%}
+
+
+\begin{document}
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+\begin{frame}
+\tableofcontents
+\end{frame}
+\section{The video section} 
+\begin{frame}{The video section}
+this is the video
+
+\end{frame}
+%\begin{frame}
+%\frame[label=blah]{
+%\begin{center}%
+%    \includemovie{.85\textheight}{.85\textheight}{/home/rchand/Videos/cosmic_web.mp4}%
+%\end{center}%
+%\note{%
+%    \begin{itemize}
+%        \item blah
+%        \item blah
+%    \end{itemize}
+%    }%
+%}%
+%\end{frame}
+\begin{frame}[plain]
+\centering
+\includemedia[
+  width=\linewidth,
+  totalheight=0.5\paperwidth,
+%  width=9cm , height=9cm ,
+  activate=pagevisible,
+  passcontext,  %show VPlayer's right-click menu
+  addresource=/home/rchand/Videos/cosmic_web.mp4,
+  flashvars={
+    %important: same path as in `addresource'
+    source=/home/rchand/Videos/cosmic_web.mp4
+    &autoPlay=true
+    &loop=true
+  }
+]{}{VPlayer9.swf}
+\tiny Credits: Kim Albrecht,Center for Complex Network Science, NOAO, Harvard University
+\end{frame}
+
+\end{document}

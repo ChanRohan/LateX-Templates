@@ -1,0 +1,86 @@
+\documentclass[a4paper, 11pt, oneside]{book} % A4 paper size, default 11pt font size and oneside for equal margins
+
+\usepackage[svgnames]{xcolor} % Required for colour specification
+
+\usepackage{graphicx} % Required for box manipulation
+
+%\newcommand*{\plogo}{\fbox{$\mathcal{PL}$}}
+
+%\newcommand{\plogo}{\fbox{$\mathcal{PL}$}} % Generic dummy publisher logo
+
+\usepackage[utf8]{inputenc} % Required for inputting international characters
+\usepackage[T1]{fontenc} % Output font encoding for international characters
+\usepackage{fouriernc} % Use the New Century Schoolbook font
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\begin{document} 
+
+\begin{titlepage} 
+\centering % Suppresses headers and footers on the title page
+\setlength{\unitlength}{0.6\textwidth} % Set the width of the curly brackets above and below the titles
+	
+	{\color{LightGoldenrod}\resizebox*{\unitlength}{\baselineskip}{\rotatebox{90}{$\}$}}}\\[\baselineskip] % Top curly bracket
+	
+	\textcolor{Sienna}{\textit{\Huge Center for Basic Sciences }}\\[\baselineskip] % Title
+	
+	{\color{RosyBrown}\Large  Pt. Ravishankar Shukla University, Raipur}\\ % Subtitle or further description
+	
+	{\color{LightGoldenrod}\resizebox*{\unitlength}{\baselineskip}{\rotatebox{-90}{$\}$}}} % Bottom curly bracket
+	\centering % Centre everything on the title page
+	
+	\scshape % Use small caps for all text on the title page
+	
+	\vspace*{7\baselineskip} % White space at the top of the page
+	
+	%------------------------------------------------
+	%	Title
+	%------------------------------------------------
+	
+	\rule{\textwidth}{1.6pt}\vspace*{-\baselineskip}\vspace*{2pt} % Thick horizontal rule
+	\rule{\textwidth}{0.4pt} % Thin horizontal rule
+	
+	\vspace{0.75\baselineskip} % Whitespace above the title
+	
+	{\Huge Advanced Physics\\ Laboratory – I\\} % Title
+	
+	\vspace{0.75\baselineskip} % Whitespace below the title
+	
+	\rule{\textwidth}{0.4pt}\vspace*{-\baselineskip}\vspace{3.2pt} % Thin horizontal rule
+	\rule{\textwidth}{1.6pt} % Thick horizontal rule
+	
+	\vspace{2\baselineskip} % Whitespace after the title block
+	
+	\texttt{\LARGE PL701 \\ $~$\\ \today}
+	%------------------------------------------------
+	%	Subtitle
+	%------------------------------------------------
+	% Subtitle or further description
+	
+	\vspace*{7\baselineskip} % Whitespace under the subtitle
+	
+	%------------------------------------------------
+	%	Editor(s)
+	%------------------------------------------------
+	
+	Submitted By
+	
+	\vspace{1\baselineskip} % Whitespace before the editors
+	
+	{\scshape\LARGE Rohan Chandrakar} % Editor list
+	
+	\vspace{0.5\baselineskip} % Whitespace below the editor list
+	
+	%\textit{\LARGE Center for Basic Sciences \\ Pt. Ravishankar Shukla University, Raipur} % Editor affiliation
+	
+	\vfill % Whitespace between editor names and publisher logo
+	
+	 % Publisher
+
+\end{titlepage}
+
+%----------------------------------------------------------------------------------------
+
+\end{document}
